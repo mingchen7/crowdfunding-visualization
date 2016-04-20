@@ -1,0 +1,51 @@
+---
+title: "emotional impact results"
+author: "Ming"
+date: "April 9, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Join Projects and Essay tables
+
+```{r}
+setwd('/home/ming/Documents/bfit')
+essays = read.csv('ESSAYS_SENTIMENT_TX.csv', header = TRUE)
+projects = read.csv('PROJECTS_TX.csv', header = TRUE)
+data = merge(essays, projects, by = 'PROJECTID')
+```
+
+### Descriptive statistics
+```{r}
+summary(essays[,c(4:7)])
+```
+
+### Histrograms
+
+```{r histogram, echo=FALSE}
+par(mfrow=c(3,1))
+hist(data$NEG, breaks = 40, col = 'blue', cex = 1.2)
+hist(data$NEU, breaks = 40, col = 'grey', cex = 1.2)
+hist(data$POS, breaks = 40, col = 'red', cex = 1.2)
+```
+
+### Relation to donation amounts
+
+```{r scatter, echo=FALSE}
+plot(data$POS, data$TOTAL_DONATIONS, ylim = c(0, 10000))
+plot(data$NEU, data$TOTAL_DONATIONS, ylim = c(0,10000))
+plot(data$NEG, data$TOTAL_DONATIONS, ylim = c(0, 10000))
+```
+
+### Some boxplots
+```{r boxplots, echo=FALSE}
+par(mfrow=c(1,3))
+boxplot(NEG~POVERTY_LEVEL, data = data, col = "blue")
+boxplot(NEU~POVERTY_LEVEL, data = data, col = "grey")
+boxplot(POS~POVERTY_LEVEL, data = data, col = "red")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
