@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Test of D3.js</title>
+<title>Project Donation by Polital Representation</title>
 <style>
 
 @import url(style.css);
- 
+
 #circle circle {
 fill: none;
 pointer-events: all;
@@ -26,12 +26,11 @@ display: none;
 </style>
  
 <header>
-<p>Modified from Mike Bostock's <a href="http://bost.ocks.org/mike/uberdata/">Uber Rides by Neighborhood</a></p>
-<aside>April 10th, 2016</aside>
+<aside>April 26th, 2016</aside>
 </header>
  
-<h2>Donation amounts flow from state X to state Y</h2>
-
+<h2>Project Donation by Political Representation</h2>
+<p>Presented by Team 3</p>
 <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 <script>
 
@@ -46,7 +45,7 @@ var arc = d3.svg.arc()
 .innerRadius(innerRadius)
 .outerRadius(outerRadius);
 
- console.log(arc)
+// console.log(arc)
 
 var layout = d3.layout.chord()
 .padding(.04)
@@ -66,13 +65,15 @@ var svg = d3.select("body").append("svg")
 svg.append("circle")
 .attr("r", outerRadius);
  
-d3.csv("states.csv", function(states) {
-d3.json("matrix.json", function(matrix) {
+d3.csv("states_with_political_parties.csv", function(states) {
+d3.json("matrix_political_2014.json", function(matrix) {
  
+// console.log(states) 
+console.log(matrix)
+
 // Compute the chord layout.
 layout.matrix(matrix);
  
-
 // Add a group per neighborhood.
 var group = svg.selectAll(".group")
 .data(layout.groups)
@@ -80,7 +81,7 @@ var group = svg.selectAll(".group")
 .attr("class", "group")
 .on("mouseover", mouseover);
 
-console.log(group)
+// console.log(group)
  
 // Add a mouseover title.
 group.append("title").text(function(d, i) {
@@ -88,7 +89,6 @@ return states[i].name + ": " + "$" + format(d.value) + " of total";
 });
  
 // Add the group arc.
-console.log(states)
 var groupPath = group.append("path")
 .attr("id", function(d, i) { return "group" + i; })
 .attr("d", arc)
@@ -136,8 +136,7 @@ return p.source.index != i
  
 </script>
  
- 
-<footer>
-<aside>April 10th, 2016</aside>
+ <footer>
+<aside>April 26th, 2016</aside>
 <p>Modified from Mike Bostock's <a href="http://bost.ocks.org/mike/uberdata/">Uber Rides by Neighborhood</a></p>
 </footer>
