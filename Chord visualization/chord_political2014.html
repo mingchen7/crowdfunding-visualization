@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Project Donation by Poverty Level</title>
+<title>Project Donation by Polital Representation</title>
 <style>
 
 @import url(style.css);
@@ -27,12 +27,10 @@ display: none;
  
 <header>
 <aside>April 26th, 2016</aside>
-
 </header>
  
-<h2>Project Donation by Poverty Level</h2>
+<h2>Project Donation by Political Representation</h2>
 <p>Presented by Team 3</p>
-
 <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 <script>
 
@@ -67,12 +65,8 @@ var svg = d3.select("body").append("svg")
 svg.append("circle")
 .attr("r", outerRadius);
  
-d3.csv("states_poverty.csv", function(states) {
-<<<<<<< HEAD
-d3.json("matrix_poverty_graph.json", function(matrix) {
-=======
-d3.json("matrix_poverty_pivot.json", function(matrix) {
->>>>>>> b03a3e3b5d53d69f3fdd2941fec640228c870729
+d3.csv("states_with_political_parties.csv", function(states) {
+d3.json("matrix_political_2014.json", function(matrix) {
  
 // console.log(states) 
 console.log(matrix)

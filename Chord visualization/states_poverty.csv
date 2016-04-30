@@ -17,6 +17,7 @@ WI,#fffa00
 NV,#fffa00
 WY,#fffa00
 CT,#fffa00
+<<<<<<< HEAD
 FL,#ff3000
 ND,#ff3000
 PA,#ff3000
@@ -46,6 +47,37 @@ OK,#ff6a00
 AR,#ff6a00
 TX,#ff6a00
 AL,#ff6a00
+=======
+FL,#ff6a00
+ND,#ff6a00
+PA,#ff6a00
+IA,#ff6a00
+CO,#ff6a00
+IL,#ff6a00
+MO,#ff6a00
+SD,#ff6a00
+MI,#ff6a00
+NJ,#ff6a00
+RI,#ff6a00
+OH,#ff6a00
+KS,#ff6a00
+IN,#ff6a00
+ME,#ff6a00
+NC,#ff3000
+CA,#ff3000
+MT,#ff3000
+GA,#ff3000
+NY,#ff3000
+KY,#ff3000
+TN,#ff3000
+SC,#ff3000
+AZ,#ff3000
+WV,#ff3000
+OK,#ff3000
+AR,#ff3000
+TX,#ff3000
+AL,#ff3000
+>>>>>>> b03a3e3b5d53d69f3fdd2941fec640228c870729
 NM,#ff0500
 LA,#ff0500
 MS,#ff0500
